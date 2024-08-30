@@ -59,14 +59,14 @@ char *fnd_pth(inf_t *inf, char *pthstr, char *cmd)
 		return (NULL);
 	if ((_sln(cmd) > 2) && big_wiz(cmd, "./"))
 	{
-		if (is_cmd(info, cmd))
+		if (is_cmd(inf, cmd))
 			return (cmd);
 	}
 	while (1)
 	{
 		if (!pthstr[i] || pthstr[i] == ':')
 		{
-			pth = dap_chars(pathstr, curr_pos, i);
+			pth = dap_chars(pthstr, curr_pos, i);
 			if (!*pth)
 				_sct(pth, cmd);
 			else
