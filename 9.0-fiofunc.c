@@ -77,7 +77,7 @@ int read_history(inf_t *inf)
 		fsize = st.st_size;
 	if (fsize < 2)
 		return (0);
-	buf = malloc(sizeof(char) * (fsize + 1));
+	buff = malloc(sizeof(char) * (fsize + 1));
 	if (!buff)
 		return (0);
 	rdlen = read(fd, buff, fsize);
@@ -139,5 +139,5 @@ int renumber_history(inf_t *inf)
 		node->num = i++;
 		node = node->next;
 	}
-	return (info->histcount = i);
+	return (inf->histcount = i);
 }
