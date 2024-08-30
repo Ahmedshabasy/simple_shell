@@ -18,11 +18,11 @@ ssize_t input_buff(inf_t *inf, char **buff, size_t *ln)
 		/*bfree((void **)info->cmd_buf);*/
 		free(*buff);
 		*buff = NULL;
-		signal(SIGINT, sigintHndler);
+		signal(SIGINT, sigintHandler);
 #if USE_GETLINE
 		r = getline(buff, &ln_p, stdin);
 #else
-		r = _getline(inf, buff, &ln_p);
+		r = getline(inf, buff, &ln_p);
 #endif
 		if (r > 0)
 		{
@@ -53,11 +53,11 @@ ssize_t input_buff(inf_t *inf, char **buff, size_t *ln)
 ssize_t get_input(inf_t *inf)
 {
 	static char *buff; /* the ';' command chain buffer */
-	static size_t i, j, len;
+	static size_t i, j, ln;
 	ssize_t r = 0;
 	char **buff_p = &(inf->arg), *p;
 
-	_putchar(BUFF_FLUSH);
+	_putchr(BUFF_FLUSH);
 	r = input_buff(inf, &buff, &ln);
 	if (r == -1) /* EOF */
 		return (-1);
@@ -135,7 +135,7 @@ int _getline(inf_t *inf, char **ptr, size_t *ln)
 	if (r == -1 || (r == 0 && ln == 0))
 		return (-1);
 
-	c = _strchr(buff + i, '\n');
+	c = _schr(buff + i, '\n');
 	k = c ? 1 + (unsigned int)(c - buff) : ln;
 	new_p = _rallc(p, s, s ? s + k : k + 1);
 	if (!new_p) /* MALLOC FAILURE! */
@@ -164,7 +164,7 @@ int _getline(inf_t *inf, char **ptr, size_t *ln)
  */
 void sigintHandler(__attribute__((unused))int sig_num)
 {
-	_putss("\n");
-	_putss("$ ");
-	_putchar(BUFF_FLUSH);
+	_puts("\n");
+	_puts("$ ");
+	_putchr(BUFF_FLUSH);
 }
