@@ -8,7 +8,7 @@ void clr_inf(inf_t *inf)
 {
 	inf->arg = NULL;
 	inf->argv = NULL;
-	inf->path = NULL;
+	inf->pth = NULL;
 	inf->argc = 0;
 }
 
@@ -24,7 +24,7 @@ void st_inf(inf_t *inf, char **av)
 	inf->fname = av[0];
 	if (inf->arg)
 	{
-		inf->argv = sto(info->arg, " \t");
+		inf->argv = sto(inf->arg, " \t");
 		if (!inf->argv)
 		{
 
@@ -53,7 +53,7 @@ void free_inf(inf_t *inf, int all)
 {
 	free(inf->argv);
 	inf->argv = NULL;
-	inf->path = NULL;
+	inf->pth = NULL;
 	if (all)
 	{
 		if (!inf->cmd_buff)
@@ -69,6 +69,6 @@ void free_inf(inf_t *inf, int all)
 		pofree((void **)inf->cmd_buff);
 		if (inf->readfd > 2)
 			close(inf->readfd);
-		_putchar(BUFF_FLUSH);
+		_putchr(BUFF_FLUSH);
 	}
 }
