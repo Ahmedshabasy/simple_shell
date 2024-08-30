@@ -31,7 +31,7 @@ int unset_alias(inf_t *inf, char *str)
 	c = *p;
 	*p = 0;
 	ret = del_node_at_i(&(inf->alias),
-		gt_node_i(inf->alias, node_big_wiz(inf->alias, str, -1)));
+		get_node_i(inf->alias, node_big_wiz(inf->alias, str, -1)));
 	*p = c;
 	return (ret);
 }
@@ -71,10 +71,10 @@ int print_alias(lst_t *node)
 	{
 		p = _schr(node->str, '=');
 		for (a = node->str; a <= p; a++)
-			_putchar(*a);
-		_putchar('\'');
-		_putss(p + 1);
-		_putss("'\n");
+			_putchr(*a);
+		_putchr('\'');
+		_puts(p + 1);
+		_puts("'\n");
 		return (0);
 	}
 	return (1);
