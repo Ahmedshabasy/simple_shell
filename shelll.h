@@ -154,7 +154,7 @@ char **sto2(char *, char);
 
 /* memory_functions */
 char *_memset(char *, char, unsigned int);
-void free(char **);
+void funcfree(char **);
 void *_rallc(void *, unsigned int, unsigned int);
 
 /* memory_functions2.c */
@@ -212,8 +212,8 @@ int build_history_lst(inf_t *inf, char *buff, int lncount);
 int renumber_history(inf_t *inf);
 
 /* liststr.c module */
-list_t *plus_node(lst_t **, const char *, int);
-list_t *plus_node_end(lst_t **, const char *, int);
+lst_t *plus_node(lst_t **, const char *, int);
+lst_t *plus_node_end(lst_t **, const char *, int);
 size_t pnt_lst_str(const lst_t *);
 int del_node_at_i(lst_t **, unsigned int);
 void free_lst(lst_t **);
