@@ -39,7 +39,7 @@ void pnt_err(inf_t *inf, char *estr)
 {
 	_eputss(inf->fname);
 	_eputss(": ");
-	print_d(inf->line_count, STDERR_FILENO);
+	print_d(inf->ln_count, STDERR_FILENO);
 	_eputss(": ");
 	_eputs(inf->argv[0]);
 	_eputss(": ");
@@ -55,7 +55,7 @@ void pnt_err(inf_t *inf, char *estr)
  */
 int print_d(int input, int fd)
 {
-	int (*__putchar)(char) = _putchar;
+	int (*__putchar)(char) = __putchar;
 	int i, count = 0;
 	unsigned int _abs_, current;
 
