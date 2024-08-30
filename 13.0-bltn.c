@@ -42,7 +42,7 @@ int _mycd(inf_t *inf)
 
 	s = getcwd(buffer, 1024);
 	if (!s)
-		_putss("TODO: >>getcwd failure emsg here<<\n");
+		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!inf->argv[1])
 	{
 		dir = _getenv(inf, "HOME=");
@@ -57,7 +57,7 @@ int _mycd(inf_t *inf)
 		if (!_getenv(inf, "OLDPWD="))
 		{
 			_putss(s);
-			_putchar('\n');
+			_putchr('\n');
 			return (1);
 		}
 		_putss(_getenv(inf, "OLDPWD=")), _putchar('\n');
