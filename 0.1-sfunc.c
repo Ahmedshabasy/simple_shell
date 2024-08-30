@@ -59,7 +59,7 @@ void _putss(char *str)
 		return;
 	while (str[n] != '\0')
 	{
-		_putchar(str[n]);
+		_putchr(str[n]);
 		n++;
 	}
 }
@@ -76,7 +76,7 @@ int _putchr(char c)
 	static int n;
 	static char buff[WRITE_BUFF_SIZE];
 
-	if (c == BUFF_FLUSH || n >= WRITE_BUF_SIZE)
+	if (c == BUFF_FLUSH || n >= WRITE_BUFF_SIZE)
 	{
 		write(1, buff, n);
 		n = 0;
