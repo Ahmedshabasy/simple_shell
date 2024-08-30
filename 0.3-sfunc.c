@@ -17,7 +17,7 @@ char **sto(char *str, char *d)
 	if (!d)
 		d = " ";
 	for (a = 0; str[a] != '\0'; a++)
-		if (!is_delim(str[a], d) && (is_delim(str[a + 1], d) || !str[a + 1]))
+		if (!is_dlm(str[a], d) && (is_dlm(str[a + 1], d) || !str[a + 1]))
 			nword++;
 
 	if (nword == 0)
@@ -67,7 +67,7 @@ char **sto2(char *str, char d)
 			nword++;
 	if (nword == 0)
 		return (NULL);
-	s = malloc((1 + numwords) * sizeof(char *));
+	s = malloc((1 + nwords) * sizeof(char *));
 	if (!s)
 		return (NULL);
 	for (a = 0, b = 0; b < nword; b++)
