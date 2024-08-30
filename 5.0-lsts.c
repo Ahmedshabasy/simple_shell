@@ -86,8 +86,8 @@ size_t pnt_lst_s(const lst_t *h)
 
 	while (h)
 	{
-		_putss(h->str ? h->str : "(nil)");
-		_putss("\n");
+		_puts(h->str ? h->str : "(nil)");
+		_puts("\n");
 		h = h->next;
 		i++;
 	}
