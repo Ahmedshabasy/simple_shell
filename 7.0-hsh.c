@@ -15,8 +15,8 @@ int hsh(inf_t *inf, char **av)
 	while (b != -1 && bltn_ret != -2)
 	{
 		clear_inf(inf);
-		if (intractv(inf))
-			_putss("$ ");
+		if (inractve(inf))
+			_puts("$ ");
 		_eputchr(BUFF_FLUSH);
 		b = get_input(inf);
 		if (b != -1)
@@ -27,7 +27,7 @@ int hsh(inf_t *inf, char **av)
 				find_cmd(inf);
 		}
 		else if (intractv(inf))
-			_putchar('\n');
+			_putchr('\n');
 		free_inf(inf, 0);
 	}
 	write_history(inf);
@@ -70,7 +70,7 @@ int find_bltn(inf_t *inf)
 	for (n = 0; bltntbl[n].type; n++)
 		if (_scm(inf->argv[0], bltntbl[n].type) == 0)
 		{
-			inf->ln_count++;
+			inf->ln_cnt++;
 			blt_in_ret = bltntbl[n].func(inf);
 			break;
 		}
@@ -91,7 +91,7 @@ void find_cmd(inf_t *inf)
 	inf->pth = inf->argv[0];
 	if (inf->lncount_flg == 1)
 	{
-		inf->ln_count++;
+		inf->ln_cnt++;
 		inf->lncount_flg = 0;
 	}
 	for (a = 0, b = 0; inf->arg[a]; a++)
@@ -138,7 +138,7 @@ void fork_cmd(inf_t *inf)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(inf->path, inf->argv, get_environ(inf)) == -1)
+		if (execve(inf->pth, inf->argv, get_environ(inf)) == -1)
 		{
 			free_inf(inf, 1);
 			if (errno == EACCES)
