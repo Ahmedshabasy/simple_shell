@@ -20,7 +20,7 @@ char *_mst(char *s, char b, unsigned int n)
  * funcfree - frees a string of strings
  * @pp: string of strings
  */
-void free(char **pp)
+void funcfree(char **pp)
 {
 	char **a = pp;
 
