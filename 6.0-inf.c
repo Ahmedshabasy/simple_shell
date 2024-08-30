@@ -46,7 +46,7 @@ void st_inf(inf_t *inf, char **av)
 
 /**
  * free_inf - frees info_t struct fields
- * @info: struct address
+ * @inf: struct address
  * @all: true if freeing all fields
  */
 void free_inf(inf_t *inf, int all)

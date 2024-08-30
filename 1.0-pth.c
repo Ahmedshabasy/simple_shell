@@ -3,7 +3,7 @@
 /**
  * is_cmd - determines if a file is an executable command
  * @inf: the info struct
- * @path: path to the file
+ * @pth: path to the file
  *
  * Return: 1 if true, 0 otherwise
  */
@@ -24,7 +24,7 @@ int is_cmd(inf_t *inf, char *pth)
 
 /**
  * dap_chars - duplicates characters
- * @pathstr: the PATH string
+ * @pthstr: the PATH string
  * @start: starting index
  * @stop: stopping index
  *
@@ -44,8 +44,8 @@ char *dap_chars(char *pthstr, int start, int stop)
 
 /**
  * fnd_pth - finds this cmd in the PATH string
- * @info: the info struct
- * @pathstr: the PATH string
+ * @inf: the info struct
+ * @pthstr: the PATH string
  * @cmd: the cmd to find
  *
  * Return: full path of cmd if found or NULL

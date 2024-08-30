@@ -59,7 +59,7 @@ void check_chain(infot *inf, char *buff, size_t *p, size_t i, size_t ln)
 	}
 	if (inf->cmd_buff_type == CMD_OR)
 	{
-		if (!info>status)
+		if (!inf->status)
 		{
 			buff[i] = 0;
 			j = ln;

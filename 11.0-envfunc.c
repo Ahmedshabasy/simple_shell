@@ -75,7 +75,7 @@ int _myunsetenv(inf_t *inf)
 }
 
 /**
- * populate_env_ist - populates env linked list
+ * populate_env_lst - populates env linked list
  * @inf: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  * Return: Always 0

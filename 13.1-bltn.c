@@ -20,7 +20,7 @@ int _myhistory(inf_t *inf)
  *
  * Return: Always 0 on success, 1 on error
  */
-int unset_alias(inf_t *info, char *str)
+int unset_alias(inf_t *inf, char *str)
 {
 	char *p, c;
 	int ret;

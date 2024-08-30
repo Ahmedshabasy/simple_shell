@@ -79,7 +79,7 @@ int find_bltn(inf_t *inf)
 
 /**
  * find_cmd - finds a command in PATH
- * @info: the parameter & return info struct
+ * @inf: the parameter & return info struct
  *
  * Return: void
  */
@@ -121,7 +121,7 @@ void find_cmd(inf_t *inf)
 
 /**
  * fork_cmd - forks a an exec thread to run cmd
- * @info: the parameter & return info struct
+ * @inf: the parameter & return info struct
  *
  * Return: void
  */
