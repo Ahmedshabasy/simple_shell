@@ -47,7 +47,7 @@ int _isalp(int c)
 
 int _atoi(char *s)
 {
-	int n, sgn = 1, flg = 0, outpt;
+	int n, sign = 1, flg = 0, outpt;
 	unsigned int rslt = 0;
 
 	for (n = 0;  s[n] != '\0' && flg != 2; n++)
@@ -65,7 +65,7 @@ int _atoi(char *s)
 			flg = 2;
 	}
 
-	if (sgn == -1)
+	if (sign == -1)
 		outpt = -rslt;
 	else
 		outpt = rslt;
