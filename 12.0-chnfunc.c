@@ -45,7 +45,7 @@ int is_chain(inf_t *inf, char *buff, size_t *p)
  *
  * Return: Void
  */
-void check_chain(infot *inf, char *buff, size_t *p, size_t i, size_t ln)
+void check_chain(inf_t *inf, char *buff, size_t *p, size_t i, size_t ln)
 {
 	size_t j = *p;
 
@@ -83,7 +83,7 @@ int replace_alias(inf_t *inf)
 
 	for (i = 0; i < 10; i++)
 	{
-		node = node_big_wz(inf->alias, inf->argv[0], '=');
+		node = node_big_wiz(inf->alias, inf->argv[0], '=');
 		if (!node)
 			return (0);
 		free(inf->argv[0]);
@@ -114,10 +114,10 @@ int replace_vars(inf_t *inf)
 		if (inf->argv[i][0] != '$' || !inf->argv[i][1])
 			continue;
 
-		if (!_scm(info->argv[i], "$?"))
+		if (!_scm(inf->argv[i], "$?"))
 		{
 			replace_string(&(inf->argv[i]),
-				_sdap(convert_number(inf->status, 10, 0)));
+				_sdap(conv_number(inf->status, 10, 0)));
 			continue;
 		}
 		if (!_scm(inf->argv[i], "$$"))
@@ -130,7 +130,7 @@ int replace_vars(inf_t *inf)
 		if (node)
 		{
 			replace_string(&(inf->argv[i]),
-				_sdap(_strchr(node->str, '=') + 1));
+				_sdap(strchr(node->str, '=') + 1));
 			continue;
 		}
 		replace_string(&inf->argv[i], _sdap(""));
