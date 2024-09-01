@@ -30,7 +30,7 @@ char **sto(char *str, char *d)
 		while (is_dlm(str[a], d))
 			a++;
 		c = 0;
-		while (!is_delim(str[a + c], d) && str[a + c])
+		while (!is_dlm(str[a + c], d) && str[a + c])
 			c++;
 		s[b] = malloc((c + 1) * sizeof(char));
 		if (!s[b])
