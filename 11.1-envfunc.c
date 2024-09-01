@@ -10,7 +10,7 @@ char **get_environ(inf_t *inf)
 {
 	if (!inf->environ || inf->env_changed)
 	{
-		inf->environ = lst_in(inf->env);
+		inf->environ = lst_ln(inf->env);
 		inf->env_changed = 0;
 	}
 
