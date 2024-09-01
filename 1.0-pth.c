@@ -37,7 +37,7 @@ char *dap_chars(char *pthstr, int start, int stop)
 
 	for (b = 0, a = start; a < stop; a++)
 		if (pthstr[a] != ':')
-			buf[b++] = pthstr[a];
+			buff[b++] = pthstr[a];
 	buff[b] = 0;
 	return (buff);
 }
@@ -57,7 +57,7 @@ char *fnd_pth(inf_t *inf, char *pthstr, char *cmd)
 
 	if (!pthstr)
 		return (NULL);
-	if ((_sln(cmd) > 2) && big_wiz(cmd, "./"))
+	if ((_sln(cmd) > 2) && beg_wiz(cmd, "./"))
 	{
 		if (is_cmd(inf, cmd))
 			return (cmd);
