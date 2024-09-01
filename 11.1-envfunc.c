@@ -10,7 +10,7 @@ char **get_environ(inf_t *inf)
 {
 	if (!inf->environ || inf->env_changed)
 	{
-		inf->environ = lst_to_s(inf->env);
+		inf->environ = lst_to(inf->env);
 		inf->env_changed = 0;
 	}
 
@@ -35,7 +35,7 @@ int _unsetenv(inf_t *inf, char *var)
 
 	while (node)
 	{
-		p = big_wiz(node->str, var);
+		p = beg_wiz(node->str, var);
 		if (p && *p == '=')
 		{
 			inf->env_changed = del_node_at_i(&(inf->env), i);
@@ -76,7 +76,7 @@ int _setenv(inf_t *inf, char *var, char *value)
 	node = inf->env;
 	while (node)
 	{
-		p = big_wiz(node->str, var);
+		p = beg_wiz(node->str, var);
 		if (p && *p == '=')
 		{
 			free(node->str);
