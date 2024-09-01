@@ -31,7 +31,7 @@ int unset_alias(inf_t *inf, char *str)
 	c = *p;
 	*p = 0;
 	ret = del_node_at_i(&(inf->alias),
-		get_node_i(inf->alias, node_big_wiz(inf->alias, str, -1)));
+		get_node_index(inf->alias, node_big_wiz(inf->alias, str, -1)));
 	*p = c;
 	return (ret);
 }
