@@ -40,7 +40,7 @@ void pnt_err(inf_t *inf, char *estr)
 	_eputss(inf->fname);
 	_eputss(": ");
 	print_d(inf->ln_cnt, STDERR_FILENO);
-	_eputss(": ");
+	_putss(": ");
 	_eputs(inf->argv[0]);
 	_eputss(": ");
 	_eputss(estr);
