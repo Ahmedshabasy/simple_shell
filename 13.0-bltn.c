@@ -56,11 +56,11 @@ int _mycd(inf_t *inf)
 	{
 		if (!_getenv(inf, "OLDPWD="))
 		{
-			_putss(s);
+			_puts(s);
 			_putchr('\n');
 			return (1);
 		}
-		_putss(_getenv(inf, "OLDPWD=")), _putchar('\n');
+		_putss(_getenv(inf, "OLDPWD=")), _putchr('\n');
 		chdir_ret = /* TODO: what should this be? */
 			chdir((dir = _getenv(inf, "OLDPWD=")) ? dir : "/");
 	}
