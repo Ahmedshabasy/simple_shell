@@ -92,6 +92,6 @@ int _myhelp(inf_t *inf)
 	arg_array = inf->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
-		_putss(*arg_array); /* temp att_unused workaround */
+		_puts(*arg_array); /* temp att_unused workaround */
 	return (0);
 }
