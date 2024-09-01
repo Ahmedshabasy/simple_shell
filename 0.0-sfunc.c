@@ -42,7 +42,7 @@ int _scm(char *s1, char *s2)
 
 /**
  * big_wiz - checks if needle starts with haystack
- * @hystck: string to search
+ * @hystk: string to search
  * @nedle: the substring to find
  *
  * Return: address of next char of haystack or NULL
