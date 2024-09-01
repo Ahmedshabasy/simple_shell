@@ -8,7 +8,7 @@
  */
 int _myenv(inf_t *inf)
 {
-	pnt_lst_s(inf->env);
+	pnt_lst(inf->env);
 	return (0);
 }
 
@@ -26,7 +26,7 @@ char *_getenv(inf_t *inf, const char *name)
 
 	while (node)
 	{
-		p = big_wiz(node->str, name);
+		p = beg_wiz(node->str, name);
 		if (p && *p)
 			return (p);
 		node = node->next;
