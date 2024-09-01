@@ -32,7 +32,7 @@ int hsh(inf_t *inf, char **av)
 	}
 	write_history(inf);
 	free_inf(inf, 1);
-	if (!intractv(inf) && inf->status)
+	if (!inractve(inf) && inf->status)
 		exit(inf->status);
 	if (bltn_ret == -2)
 	{
