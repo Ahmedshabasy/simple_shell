@@ -67,7 +67,7 @@ size_t pnt_lst(const lst_t *h)
 
 	while (h)
 	{
-		_puts(convert_number(h->num, 10, 0));
+		_puts(conv_number(h->num, 10, 0));
 		_putchr(':');
 		_putchr(' ');
 		_puts(h->str ? h->str : "(nil)");
@@ -92,7 +92,7 @@ lst_t *node_big_wiz(lst_t *node, char *prefix, char c)
 
 	while (node)
 	{
-		p = big_wiz(node->str, prefix);
+		p = beg_wiz(node->str, prefix);
 		if (p && ((c == -1) || (*p == c)))
 			return (node);
 		node = node->next;
