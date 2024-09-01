@@ -113,7 +113,7 @@ ssize_t read_buff(inf_t *inf, char *buff, size_t *i)
  * _getline - gets the next line of input from STDIN
  * @inf: parameter struct
  * @ptr: address of pointer to buffer, preallocated or NULL
- * @length: size of preallocated ptr buffer if not NULL
+ * @ln: size of preallocated ptr buffer if not NULL
  *
  * Return: s
  */
