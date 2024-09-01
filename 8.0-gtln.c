@@ -22,7 +22,7 @@ ssize_t input_buff(inf_t *inf, char **buff, size_t *ln)
 #if USE_GETLINE
 		r = getline(buff, &ln_p, stdin);
 #else
-		r = getline(inf, buff, &ln_p);
+		r = getline(inf_t, char **, &size_t);
 #endif
 		if (r > 0)
 		{
@@ -120,23 +120,23 @@ ssize_t read_buff(inf_t *inf, char *buff, size_t *i)
 int _getline(inf_t *inf, char **ptr, size_t *ln)
 {
 	static char buff[READ_BUFF_SIZE];
-	static size_t i, ln;
+	static size_t i, len;
 	size_t k;
 	ssize_t r = 0, s = 0;
 	char *p = NULL, *new_p = NULL, *c;
 
 	p = *ptr;
-	if (p && ln)
+	if (p && len)
 		s = *ln;
-	if (i == ln)
-		i = ln = 0;
+	if (i == len)
+		i = len = 0;
 
 	r = read_buff(inf, buff, &ln);
-	if (r == -1 || (r == 0 && ln == 0))
+	if (r == -1 || (r == 0 && len == 0))
 		return (-1);
 
 	c = _schr(buff + i, '\n');
-	k = c ? 1 + (unsigned int)(c - buff) : ln;
+	k = c ? 1 + (unsigned int)(c - buff) : len;
 	new_p = _rallc(p, s, s ? s + k : k + 1);
 	if (!new_p) /* MALLOC FAILURE! */
 		return (p ? free(p), -1 : -1);
@@ -150,7 +150,7 @@ int _getline(inf_t *inf, char **ptr, size_t *ln)
 	i = k;
 	p = new_p;
 
-	if (ln)
+	if (len)
 		*ln = s;
 	*ptr = p;
 	return (s);
