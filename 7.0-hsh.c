@@ -26,7 +26,7 @@ int hsh(inf_t *inf, char **av)
 			if (bltn_ret == -1)
 				find_cmd(inf);
 		}
-		else if (inractv(inf))
+		else if (inractve(inf))
 			_putchr('\n');
 		free_inf(inf, 0);
 	}
